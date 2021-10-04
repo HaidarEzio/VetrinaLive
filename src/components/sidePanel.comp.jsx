@@ -10,7 +10,6 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -20,6 +19,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import Navbar from "./navbar.comp";
 import { Badge } from "@mui/material";
 import { ReactComponent as Logo } from "../assets/logo.svg";
+import SideItems from "./sideItems.comp";
 
 const drawerWidth = 255;
 
@@ -166,7 +166,6 @@ export default function SidePanel() {
         </Toolbar>
       </AppBar>
 
-
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
           <LogoStyled />
@@ -175,31 +174,9 @@ export default function SidePanel() {
           </IconButton>
         </DrawerHeader>
 
+        <SideItems />
 
         <Divider />
-        
-        
-        <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        
-        
-        <Divider />
-        
-        
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
       </Drawer>
     </Box>
   );
