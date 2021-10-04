@@ -8,14 +8,14 @@ import styled from "styled-components";
 //? Styling
 const MainText = styled(Typography)`
   flex-grow: 1;
+  font-family: "Noto Sans HK";
   font-size: 17px;
   font-style: normal;
-  font-weight: 500;
 `;
 
 const WhatsNewText = styled(MainText)`
   flex-grow: 0;
-  font-weight: 400;
+  font-family: "Source Sans Pro";
   margin-right: 10px;
 `;
 

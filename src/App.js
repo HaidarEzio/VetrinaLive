@@ -1,6 +1,7 @@
 import * as React from "react";
-import { Header } from "./components/header/header.comp";
+import { Header } from "./components/header.comp";
 import NavBar from "./components/navbar.comp";
+import SidePanel from "./components/sidePanel.comp";
 import "./global.module.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
@@ -20,6 +21,7 @@ export default function App() {
     <>
       <ThemeProvider theme={theme}>
         <NavBar />
+        <SidePanel />
       </ThemeProvider>
     </>
   );
