@@ -5,12 +5,11 @@ export const HeaderStyled = styled(Typography)`
   color: red;
   padding: 8px;
   background-color: purple;
-  border-radius: 4px;
 `;
 
 //! Component
 export const Header = () => {
-  return <HeaderStyled variant="h1">I am Free</HeaderStyled>;
+  return <HeaderStyled variant="h1">It is what it is</HeaderStyled>;
 };
 
 //* same way of doing it, but this is without intellesense
