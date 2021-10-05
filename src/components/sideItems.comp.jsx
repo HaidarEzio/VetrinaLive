@@ -1,14 +1,11 @@
-import { SidePanelList } from "../assets/sidePanelList";
 import styled from "styled-components";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Badge, Grid } from "@mui/material";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import MenuMui from "./menu.comp";
 import { ReactComponent as Home } from "../assets/home.svg";
 import { ReactComponent as CogPlanet } from "../assets/Cog_Planet.svg";
 import { ReactComponent as CreditCard } from "../assets/CreditCard.svg";
@@ -30,7 +27,7 @@ import { Divider } from "@mui/material";
 const ListItemStyled = styled(ListItem)`
   border-radius: 4px;
   padding: 2px 0px 2px 19px;
-  margin: 5px 0;
+  margin: 1.5px 0;
 `;
 const ListItemSelectedStyled = styled(ListItemStyled)`
   background-color: #f7f7f7;
@@ -72,6 +69,20 @@ const Background = styled.div`
     border-radius: 5px;
   }
 `;
+
+const BadgeStyled = styled(Badge)`
+  .MuiBadge-badge {
+    background-color: #00c48c;
+    color: white;
+    border-radius: 10px;
+  }
+`;
+const GridStyled = styled(Grid)`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-right: 20px;
+`;
 const SideItems = () => {
   return (
     <List>
@@ -86,14 +97,22 @@ const SideItems = () => {
         <ListItemIcon>
           <ShoppingCart />
         </ListItemIcon>
-        <ListItemTextStyled primary="Catalogue" />
+        <GridStyled>
+          <ListItemTextStyled primary="Catalogue" />
+          <KeyboardArrowDownIcon sx={{ mr: -1.5 }} />
+        </GridStyled>
       </ListItemStyled>
+
       <ListItemStyled button>
         <ListItemIcon>
           <ListIcon />
         </ListItemIcon>
-        <ListItemTextStyled primary="Orders" />
+        <GridStyled>
+          <ListItemTextStyled primary="Orders" />
+          <BadgeStyled badgeContent={14}></BadgeStyled>
+        </GridStyled>
       </ListItemStyled>
+
       <ListItemStyled button>
         <ListItemIcon>
           <User />
@@ -104,7 +123,10 @@ const SideItems = () => {
         <ListItemIcon>
           <Target />
         </ListItemIcon>
-        <ListItemTextStyled primary="Marketing" />
+        <GridStyled>
+          <ListItemTextStyled primary="Marketing" />
+          <KeyboardArrowDownIcon sx={{ mr: -1.5 }} />
+        </GridStyled>
       </ListItemStyled>
       <ListItemStyled button>
         <ListItemIcon>
@@ -175,6 +197,8 @@ const SideItems = () => {
         </ListItemIcon>
         <ListItemTextStyled primary="View Your Shop" />
       </ListItemStyled>
+
+      <MenuMui />
     </List>
   );
 };
