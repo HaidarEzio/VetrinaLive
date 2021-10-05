@@ -1,25 +1,21 @@
 import * as React from "react";
-import { styled, useTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
+import styled from "styled-components";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import List from "@mui/material/List";
 import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
-import Navbar from "./navbar.comp";
 import { Badge } from "@mui/material";
-import { ReactComponent as Logo } from "../assets/logo.svg";
+
 import SideItems from "./sideItems.comp";
+import MenuMui from "./menu.comp";
+import MasonryGrid from "./masonry.comp";
+import { ReactComponent as Logo } from "../assets/logo.svg";
 
 const drawerWidth = 255;
 
@@ -44,7 +40,7 @@ const closedMixin = (theme) => ({
   },
 });
 
-const DrawerHeader = styled("div")(({ theme }) => ({
+export const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "flex-end",
@@ -111,7 +107,7 @@ const LogoStyled = styled(Logo)`
   margin-right: 95px;
 `;
 
-export default function SidePanel() {
+export default function Main() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -165,7 +161,6 @@ export default function SidePanel() {
           </BadgeStyled>
         </Toolbar>
       </AppBar>
-
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
           <LogoStyled />
@@ -173,11 +168,10 @@ export default function SidePanel() {
             {theme.direction === "rtl" ? <ChevronRightIcon /> : <MenuIcon />}
           </IconButton>
         </DrawerHeader>
-
         <SideItems />
-
-        <Divider />
+        <MenuMui />
       </Drawer>
+      <MasonryGrid />
     </Box>
   );
 }

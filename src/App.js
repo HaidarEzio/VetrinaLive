@@ -1,9 +1,7 @@
 import * as React from "react";
-import { Header } from "./components/header.comp";
-import NavBar from "./components/navbar.comp";
-import SidePanel from "./components/sidePanel.comp";
 import "./global.module.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Main from "./components/main.comp";
 
 const theme = createTheme({
   palette: {
@@ -18,10 +16,8 @@ const theme = createTheme({
 
 export default function App() {
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <SidePanel />
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <Main />
+    </ThemeProvider>
   );
 }

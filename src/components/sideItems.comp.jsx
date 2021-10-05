@@ -5,7 +5,6 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { Badge, Grid } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import MenuMui from "./menu.comp";
 import { ReactComponent as Home } from "../assets/home.svg";
 import { ReactComponent as CogPlanet } from "../assets/Cog_Planet.svg";
 import { ReactComponent as CreditCard } from "../assets/CreditCard.svg";
@@ -197,8 +196,6 @@ const SideItems = () => {
         </ListItemIcon>
         <ListItemTextStyled primary="View Your Shop" />
       </ListItemStyled>
-
-      <MenuMui />
     </List>
   );
 };
