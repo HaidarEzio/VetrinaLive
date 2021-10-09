@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useTheme } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -8,9 +9,11 @@ import MasonryItem from "@mui/lab/MasonryItem";
 import Box from "@mui/material/Box";
 import { Grid } from "@mui/material";
 import { ReactComponent as ExternalLink } from "../assets/ExternalLink.svg";
-import { DrawerHeader } from "./main.comp";
+import { ReactComponent as Eye } from "../assets/eye.svg";
+import { DrawerHeader } from "./drawer.comp";
 
 const MasonryStyled = styled(Masonry)`
+  height: 100%;
   padding: 0 30px;
   align-items: flex-start;
 `;
@@ -26,6 +29,7 @@ const GridStyled = styled(Grid)`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  height: 100%;
   overflow: hidden;
   background-color: rgb(248, 249, 251);
   padding: 24px;
@@ -57,10 +61,25 @@ const ExternalLinkStyled = styled(ExternalLink)`
   vertical-align: text-top;
   margin: 0 10px;
 `;
+const CardStyled = styled(Card)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 10px;
+`;
+const CardTitle = styled(Typography)`
+  font-family: Noto Sans HK;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: #103b66;
+`;
 
 const MasonryGrid = () => {
   return (
-    <Box component="main" sx={{ flexGrow: 1 }}>
+    <Box component="app" sx={{ flexGrow: 1 }}>
       <DrawerHeader />
       <GridStyled>
         <WelcomeBGStyled />
@@ -72,15 +91,94 @@ const MasonryGrid = () => {
               <ExternalLinkStyled />
             </LinkText>
           </Grid>
-          <MasonryStyled columns={3} spacing={1}>
+          <MasonryStyled columns={3} spacing={3}>
             <MasonryItem>
-              <Card sx={{ minWidth: 275 }}>
-                <CardContent>Visitors and </CardContent>
-                <CardActions>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, incidunt cupiditate eius, laudantium necessitatibus provident
-                  quidem quis, maiores nemo ut ipsum architecto tempore. Adipisci dolorem rem perspiciatis officiis. Nam, blanditiis.
-                </CardActions>
-              </Card>
+              <CardStyled sx={{ minWidth: 275 }}>
+                <CardContent sx={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexGrow: "1" }}>
+                  <Grid sx={{ display: "flex", alignItems: "center" }}>
+                    <Eye />
+                    <CardTitle sx={{ ml: 1 }}>Visitors</CardTitle>
+                  </Grid>
+                </CardContent>
+                <CardContent
+                  sx={{
+                    fontFamily: "Noto Sans HK",
+                    fontStyle: "normal",
+                    fontWeight: 500,
+                    fontSize: 42,
+                    color: "#103b66",
+                  }}
+                >
+                  1824
+                </CardContent>
+                <CardActions>Do you want more visits? Contact us!</CardActions>
+              </CardStyled>
+            </MasonryItem>
+            <MasonryItem>
+              <CardStyled sx={{ minWidth: 275 }}>
+                <CardContent sx={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexGrow: "1" }}>
+                  <Grid sx={{ display: "flex", alignItems: "center" }}>
+                    <Eye />
+                    <CardTitle sx={{ ml: 1 }}>Visitors</CardTitle>
+                  </Grid>
+                </CardContent>
+                <CardContent
+                  sx={{
+                    fontFamily: "Noto Sans HK",
+                    fontStyle: "normal",
+                    fontWeight: 500,
+                    fontSize: 42,
+                    color: "#103b66",
+                  }}
+                >
+                  1824
+                </CardContent>
+                <CardActions>Do you want more visits? Contact us!</CardActions>
+              </CardStyled>
+            </MasonryItem>
+            <MasonryItem>
+              <CardStyled sx={{ minWidth: 275 }}>
+                <CardContent sx={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexGrow: "1" }}>
+                  <Grid sx={{ display: "flex", alignItems: "center" }}>
+                    <Eye />
+                    <CardTitle sx={{ ml: 1 }}>Visitors</CardTitle>
+                  </Grid>
+                </CardContent>
+                <CardContent
+                  sx={{
+                    fontFamily: "Noto Sans HK",
+                    fontStyle: "normal",
+                    fontWeight: 500,
+                    fontSize: 42,
+                    color: "#103b66",
+                  }}
+                >
+                  1824
+                </CardContent>
+                <CardActions>Do you want more visits? Contact us!</CardActions>
+              </CardStyled>
+            </MasonryItem>
+            <MasonryItem>
+              <CardStyled sx={{ minWidth: 275 }}>
+                <CardContent sx={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexGrow: "1" }}>
+                  <Grid sx={{ display: "flex", alignItems: "center" }}>
+                    <Eye />
+                    <CardTitle sx={{ ml: 1 }}>Visitors</CardTitle>
+                  </Grid>
+                </CardContent>
+                <CardContent
+                  sx={{
+                    fontFamily: "Noto Sans HK",
+                    fontStyle: "normal",
+                    fontWeight: 500,
+                    fontSize: 42,
+                    color: "#103b66",
+                  }}
+                >
+                  1824
+                </CardContent>
+                <CardActions>Do you want more visits? Contact us!</CardActions>
+              </CardStyled>
             </MasonryItem>
           </MasonryStyled>
         </GridMasonryStyled>

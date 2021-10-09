@@ -4,7 +4,6 @@ import styled from "styled-components";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
@@ -14,6 +13,7 @@ import { Badge } from "@mui/material";
 
 import SideItems from "./sideItems.comp";
 import MenuMui from "./menu.comp";
+import Navbar from "./navbar.comp";
 import MasonryGrid from "./masonry.comp";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 
@@ -109,58 +109,19 @@ const LogoStyled = styled(Logo)`
 
 export default function Main() {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
+  var [open, setOpen] = React.useState(false);
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+  const handleDrawerOpen = () => {
+    setOpen(true);
   };
 
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            color="secondary"
-            sx={{
-              marginRight: "36px",
-              ...(open && { display: "none" }),
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <MainText variant="h6" noWrap component="div" color="secondary">
-            Dashboard
-          </MainText>
-          <BadgeStyled badgeContent={2} color="secondary" sx={{ display: "flex" }}>
-            <svg
-              stroke="#103b66"
-              fill="none"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              size="24"
-              height="24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-            </svg>
-            <WhatsNewText variant="h6" color="secondary">
-              What’s new
-            </WhatsNewText>
-          </BadgeStyled>
-        </Toolbar>
-      </AppBar>
+      <Navbar open={open} />
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
           <LogoStyled />
