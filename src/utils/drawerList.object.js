@@ -16,7 +16,7 @@ import { ReactComponent as Truck } from "../assets/truck.svg";
 import { ReactComponent as User } from "../assets/user.svg";
 import { ReactComponent as Brush } from "../assets/Brush.svg";
 
-export const UpperLIst = [
+export const upperList = [
   { type: "item", icon: <Home />, text: "Dashboard" },
   {
     type: "collapse",
@@ -25,7 +25,7 @@ export const UpperLIst = [
     innerList: ["MirrorMaker", "JawBreaker", "HeatSeeker", "GasLighter", "MoonRaker"],
   },
   {
-    type: "item",
+    type: "badge",
     icon: <ListIcon />,
     text: "Orders",
   },
@@ -63,7 +63,7 @@ export const UpperLIst = [
   { type: "item", icon: <LogOut />, text: "Log out" },
 ];
 
-export const BottomList = [
+export const bottomList = [
   { type: "item", icon: <HelpCircle />, text: "Customer Support" },
   { type: "item", icon: <Share />, text: "Share your shop" },
   { type: "item", icon: <Eye />, text: "View your shop" },

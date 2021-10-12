@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-import DrawerItems from "./drawerItems.comp";
+import DrawerList from "./drawerList.comp";
 import MenuMui from "./menu.comp";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 
@@ -73,7 +73,7 @@ function DrawerContainer({ open, handleDrawerClose }) {
           {theme.direction === "rtl" ? <ChevronRightIcon /> : <MenuIcon />}
         </IconButton>
       </DrawerHeader>
-      <DrawerItems />
+      <DrawerList />
       <MenuMui />
     </Drawer>
   );
