@@ -48,7 +48,7 @@ const BadgeStyled = styled(Badge)`
   }
 `;
 
-export default function Navbar({ open, handleDrawerOpen }) {
+export default function Header({ open, handleDrawerOpen }) {
   return (
     <AppBar position="fixed" open={open}>
       <Toolbar>

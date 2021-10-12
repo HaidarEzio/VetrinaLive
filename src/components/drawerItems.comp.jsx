@@ -3,6 +3,12 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
+import Typography from "@mui/material/Typography";
+
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+
 import { Badge, Grid } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { ReactComponent as Home } from "../assets/home.svg";
@@ -82,7 +88,11 @@ const GridStyled = styled(Grid)`
   width: 100%;
   margin-right: 20px;
 `;
-const SideItems = () => {
+
+const AccordionDetailsStyled = styled(AccordionDetails)`
+  padding: 0;
+`;
+const DrawerItems = () => {
   return (
     <List>
       <ListItemSelectedStyled button selected>
@@ -92,14 +102,13 @@ const SideItems = () => {
         </ListItemIcon>
         <ListItemTextSelectedStyled primary="Dashboard" />
       </ListItemSelectedStyled>
+
       <ListItemStyled button>
         <ListItemIcon>
           <ShoppingCart />
         </ListItemIcon>
-        <GridStyled>
-          <ListItemTextStyled primary="Catalogue" />
-          <KeyboardArrowDownIcon sx={{ mr: -1.5 }} />
-        </GridStyled>
+
+        <ListItemTextSelectedStyled primary="Catalogue" />
       </ListItemStyled>
 
       <ListItemStyled button>
@@ -200,4 +209,4 @@ const SideItems = () => {
   );
 };
 
-export default SideItems;
+export default DrawerItems;

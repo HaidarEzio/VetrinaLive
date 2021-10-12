@@ -4,7 +4,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import { useState } from "react";
-import Navbar from "./components/navbar.comp";
+import Header from "./components/header.comp";
 import DrawerContainer from "./components/drawer.comp";
 import MasonryGrid from "./components/masonry.comp";
 
@@ -31,8 +31,8 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: "flex" }}>
-        <Navbar open={open} handleDrawerOpen={handleDrawerOpen} />
         <DrawerContainer open={open} handleDrawerClose={handleDrawerClose} />
+        <Header open={open} handleDrawerOpen={handleDrawerOpen} />
         <MasonryGrid />
       </Box>
     </ThemeProvider>

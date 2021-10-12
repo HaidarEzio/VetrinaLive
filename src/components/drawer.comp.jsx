@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-import SideItems from "./sideItems.comp";
+import DrawerItems from "./drawerItems.comp";
 import MenuMui from "./menu.comp";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 
@@ -58,7 +58,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "open" 
   }),
 }));
 //*------------------------- Custom Styles --------------------------------
-
+//! LOGO CAN'T GET STYLED BY CLASSES
 const LogoStyled = styled(Logo)`
   margin-right: 95px;
 `;
@@ -73,7 +73,7 @@ function DrawerContainer({ open, handleDrawerClose }) {
           {theme.direction === "rtl" ? <ChevronRightIcon /> : <MenuIcon />}
         </IconButton>
       </DrawerHeader>
-      <SideItems />
+      <DrawerItems />
       <MenuMui />
     </Drawer>
   );
