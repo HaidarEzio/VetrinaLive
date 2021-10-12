@@ -19,7 +19,7 @@ import { ReactComponent as Brush } from "../assets/Brush.svg";
 export const upperList = [
   { type: "item", icon: <Home />, text: "Dashboard" },
   {
-    type: "collapse",
+    type: "accordion",
     icon: <ShoppingCart />,
     text: "Catalogue",
     innerList: ["MirrorMaker", "JawBreaker", "HeatSeeker", "GasLighter", "MoonRaker"],
@@ -35,7 +35,7 @@ export const upperList = [
     text: "Customers",
   },
   {
-    type: "collapse",
+    type: "accordion",
     icon: <Target />,
     text: "Marketing",
     innerList: [
@@ -53,11 +53,16 @@ export const upperList = [
   { type: "item", icon: <Truck />, text: "Delivery options" },
   { type: "item", icon: <DollarSign />, text: "Payment Options" },
   { type: "item", icon: <Brush />, text: "Store Design" },
-  { type: "item", icon: <CreditCard />, text: "Subscriptons" },
+  { type: "item", icon: <CreditCard />, text: "Subscriptions" },
   {
     type: "item",
     icon: <CogPlanet />,
     text: "Integrations",
+  },
+  {
+    type: "item",
+    icon: <NewApp />,
+    text: "Extensions",
   },
   { type: "item", icon: <Settings />, text: "Settings" },
   { type: "item", icon: <LogOut />, text: "Log out" },

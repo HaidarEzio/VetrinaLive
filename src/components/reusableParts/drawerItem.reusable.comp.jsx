@@ -4,7 +4,7 @@ import List from "@mui/material/List";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { Collapse, Badge, Grid } from "@mui/material";
-import { AllInbox, ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material";
+import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import { useState, Fragment } from "react";
 
 const BadgeStyled = styled(Badge)`
@@ -81,7 +81,7 @@ export function DrawerAccordion({ icon, text, innerList }) {
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List sx={{ backgroundColor: "#E9F8FE" }} component="section" disablePadding>
           {innerList.map((item) => (
-            <ListItemButton sx={{ py: 0.3, pl: 10 }}>
+            <ListItemButton sx={{ py: 0.3, pl: 9.5 }}>
               <ListItemTextStyled primary={item} />
             </ListItemButton>
           ))}

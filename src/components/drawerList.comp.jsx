@@ -1,20 +1,10 @@
 import styled from "styled-components";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-
-import ListItemText from "@mui/material/ListItemText";
-
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-
-import { Badge, Grid } from "@mui/material";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Divider } from "@mui/material";
 import { DrawerItem, DrawerAccordion } from "./reusableParts/drawerItem.reusable.comp";
 import { upperList, bottomList } from "../utils/drawerList.object";
 
-const Background = styled.div`
+const SideIndicator = styled.div`
   & {
     position: absolute;
     top: 0;
@@ -46,7 +36,7 @@ const DrawerItems = () => {
         <>
           {type === "item" && <DrawerItem key={index} icon={icon} text={text} />}
           {type === "badge" && <DrawerItem key={index} icon={icon} text={text} badge={14} />}
-          {type === "collapse" && <DrawerAccordion key={index} icon={icon} text={text} innerList={innerList} />}
+          {type === "accordion" && <DrawerAccordion key={index} icon={icon} text={text} innerList={innerList} />}
         </>
       ))}
 
