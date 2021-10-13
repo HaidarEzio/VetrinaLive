@@ -4,7 +4,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Badge } from "@mui/material";
+import { Badge, Button } from "@mui/material";
 
 import styled from "styled-components";
 
@@ -35,10 +35,13 @@ const MainText = styled(Typography)`
   font-weight: 500;
 `;
 
-const WhatsNewText = styled(MainText)`
-  flex-grow: 0;
+const WhatsNewText = styled(Button)`
   font-family: "Source Sans Pro";
+  font-size: 17px;
+  font-weight: 500;
   margin-right: 10px;
+  padding: 0;
+  text-transform: inherit;
 `;
 
 const BadgeStyled = styled(Badge)`

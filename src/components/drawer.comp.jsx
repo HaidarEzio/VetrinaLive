@@ -7,7 +7,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 import DrawerList from "./drawerList.comp";
-import MenuMui from "./menu.comp";
+import MenuMui from "../components/reusableParts/menu.reusable.comp";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 
 const drawerWidth = 255;
@@ -74,7 +74,7 @@ function DrawerContainer({ open, handleDrawerClose }) {
         </IconButton>
       </DrawerHeader>
       <DrawerList />
-      <MenuMui />
+      <MenuMui label="Select your Shop" current="Fenoh Store" />
     </Drawer>
   );
 }

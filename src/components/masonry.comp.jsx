@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useTheme } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -8,9 +7,10 @@ import Masonry from "@mui/lab/Masonry";
 import MasonryItem from "@mui/lab/MasonryItem";
 import Box from "@mui/material/Box";
 import { Grid } from "@mui/material";
-import { ReactComponent as ExternalLink } from "../assets/ExternalLink.svg";
+
 import { ReactComponent as Eye } from "../assets/eye.svg";
 import { DrawerHeader } from "./drawer.comp";
+import LinkText from "./reusableParts/linkText.reusable.comp";
 
 const MasonryStyled = styled(Masonry)`
   height: 100%;
@@ -41,7 +41,6 @@ const GridMasonryStyled = styled(Grid)`
   padding-bottom: 48px;
   max-width: 100%;
 `;
-
 const HeroText = styled(Typography)`
   font-family: Source Sans Pro;
   font-style: normal;
@@ -51,16 +50,6 @@ const HeroText = styled(Typography)`
   color: white;
 `;
 
-const LinkText = styled(HeroText)`
-  font-family: Noto Sans HK;
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 22px;
-`;
-const ExternalLinkStyled = styled(ExternalLink)`
-  vertical-align: text-top;
-  margin: 0 10px;
-`;
 const CardStyled = styled(Card)`
   display: flex;
   flex-direction: column;
@@ -84,12 +73,9 @@ const MasonryGrid = () => {
       <GridStyled>
         <WelcomeBGStyled />
         <GridMasonryStyled>
-          <Grid sx={{ display: "flex", justifyContent: "space-between", mb: 5 }}>
+          <Grid sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 5 }}>
             <HeroText>Welcome Mario !</HeroText>
-            <LinkText sx={{ textDecoration: "underline" }}>
-              app.vetrinalive.it/fenoh-store
-              <ExternalLinkStyled />
-            </LinkText>
+            <LinkText link="app.vetrinalive.it/fenoh-store" />
           </Grid>
           <MasonryStyled columns={3} spacing={3}>
             <MasonryItem>

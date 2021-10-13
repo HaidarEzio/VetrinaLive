@@ -12,7 +12,6 @@ const BadgeStyled = styled(Badge)`
     background-color: #00c48c;
     color: white;
     border-radius: 13px;
-
     padding: 13px 6px;
   }
 `;
@@ -40,27 +39,20 @@ const GridStyled = styled(Grid)`
 const Accordion = styled(Fragment)`
   &&.ListIcon {
     min-width: 35px;
-    color: #c95555;
+    color: #000000;
   }
 `;
 
 export function DrawerItem({ icon, text, badge }) {
   return (
     <>
-      {badge ? (
-        <ListItemButtonStyled>
-          <ListItemIcon>{icon}</ListItemIcon>
-          <GridStyled>
-            <ListItemTextStyled primary={text} />
-            <BadgeStyled badgeContent={badge}></BadgeStyled>
-          </GridStyled>
-        </ListItemButtonStyled>
-      ) : (
-        <ListItemButtonStyled>
-          <ListItemIcon>{icon}</ListItemIcon>
+      <ListItemButtonStyled>
+        <ListItemIcon>{icon}</ListItemIcon>
+        <GridStyled>
           <ListItemTextStyled primary={text} />
-        </ListItemButtonStyled>
-      )}
+          {badge ? <BadgeStyled badgeContent={badge}></BadgeStyled> : ""}
+        </GridStyled>
+      </ListItemButtonStyled>
     </>
   );
 }

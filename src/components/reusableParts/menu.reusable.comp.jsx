@@ -6,6 +6,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Typography } from "@mui/material";
+import { menuList } from "../../utils/drawerMenu.object";
 
 const StyledMenu = styled((props) => (
   <Menu
@@ -75,7 +76,7 @@ const StyledMenuStyled = styled(StyledMenu)`
   }
 `;
 
-export default function MenuMui() {
+export default function MenuMui({ label, current }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -87,7 +88,7 @@ export default function MenuMui() {
 
   return (
     <MenuMuiStyled>
-      <LabelStyled>Select your Shop</LabelStyled>
+      <LabelStyled>{label}</LabelStyled>
       <ButtonStyled
         id="demo-customized-button"
         aria-controls="demo-customized-menu"
@@ -98,7 +99,7 @@ export default function MenuMui() {
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon />}
       >
-        Fenoh Store
+        {current}
       </ButtonStyled>
       <StyledMenuStyled
         id="demo-customized-menu"
@@ -109,9 +110,11 @@ export default function MenuMui() {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} disableRipple>
-          MirrorMaker
-        </MenuItem>
+        {menuList.map(({ text }, index) => (
+          <MenuItem key={index} onClick={handleClose} disableRipple>
+            {text}
+          </MenuItem>
+        ))}
       </StyledMenuStyled>
     </MenuMuiStyled>
   );
