@@ -11,18 +11,28 @@ const Link = styled(Typography)`
   font-family: Noto Sans HK;
   font-weight: 500;
   font-size: 17px;
-  line-height: 22px;
-  color: white;
+  line-height: 22px; ;
 `;
 
-function LinkText({ link }) {
+function LinkText({ linkText, color, link }) {
   return (
-    <Link sx={{ textDecoration: "underline" }}>
-      <a href={link}>
-        {link}
-        <ExternalLinkStyled />
-      </a>
-    </Link>
+    <>
+      {color ? (
+        <Link sx={{ textDecoration: "underline", color: `${color}` }}>
+          <a href={link}>
+            {linkText}
+            <ExternalLinkStyled stroke={color} />
+          </a>
+        </Link>
+      ) : (
+        <Link sx={{ textDecoration: "underline", color: "#ffffff" }}>
+          <a href={link}>
+            {linkText}
+            <ExternalLinkStyled />
+          </a>
+        </Link>
+      )}
+    </>
   );
 }
 

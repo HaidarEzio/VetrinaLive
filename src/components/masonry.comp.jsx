@@ -1,16 +1,23 @@
 import styled from "styled-components";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
+
 import Typography from "@mui/material/Typography";
 import Masonry from "@mui/lab/Masonry";
-import MasonryItem from "@mui/lab/MasonryItem";
+
 import Box from "@mui/material/Box";
 import { Grid } from "@mui/material";
 
-import { ReactComponent as Eye } from "../assets/eye.svg";
 import { DrawerHeader } from "./drawer.comp";
 import LinkText from "./reusableParts/linkText.reusable.comp";
+import VisitorCard from "./cards/visitorsCard.comp";
+import OrderCard from "./cards/orderCard.comp";
+import ConfigureCard from "./cards/configureCard.comp";
+import DownloadCard from "./cards/downloadCard.comp";
+import MarketplaceCard from "./cards/marketplaceCard.comp";
+import TrustpilotCard from "./cards/trustpilotCard.comp";
+import LastestNewsCard from "./cards/latestNewsCard.comp";
+import InviteCard from "./cards/inviteCard.comp";
+import SupportCard from "./cards/supportCard.comp";
 
 const MasonryStyled = styled(Masonry)`
   height: 100%;
@@ -34,7 +41,6 @@ const GridStyled = styled(Grid)`
   background-color: rgb(248, 249, 251);
   padding: 24px;
 `;
-
 const GridMasonryStyled = styled(Grid)`
   position: relative;
   padding-top: 40px;
@@ -50,20 +56,13 @@ const HeroText = styled(Typography)`
   color: white;
 `;
 
-const CardStyled = styled(Card)`
+export const CardStyled = styled(Card)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 5px;
   border-radius: 10px;
-`;
-const CardTitle = styled(Typography)`
-  font-family: Noto Sans HK;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 25px;
-  color: #103b66;
+  box-shadow: 0px 4px 4px rgba(50, 50, 71, 0.08), 0px 4px 8px rgba(50, 50, 71, 0.06);
 `;
 
 const MasonryGrid = () => {
@@ -75,97 +74,19 @@ const MasonryGrid = () => {
         <GridMasonryStyled>
           <Grid sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 5 }}>
             <HeroText>Welcome Mario !</HeroText>
-            <LinkText link="app.vetrinalive.it/fenoh-store" />
+            <LinkText color="#ffffff" linkText="app.vetrinalive.it/fenoh-store" link="https://vetrinalive.com/" />
           </Grid>
+
           <MasonryStyled columns={3} spacing={3}>
-            <MasonryItem>
-              <CardStyled sx={{ minWidth: 275 }}>
-                <CardContent sx={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexGrow: "1" }}>
-                  <Grid sx={{ display: "flex", alignItems: "center" }}>
-                    <Eye />
-                    <CardTitle sx={{ ml: 1 }}>Visitors</CardTitle>
-                  </Grid>
-                </CardContent>
-                <CardContent
-                  sx={{
-                    fontFamily: "Noto Sans HK",
-                    fontStyle: "normal",
-                    fontWeight: 500,
-                    fontSize: 42,
-                    color: "#103b66",
-                  }}
-                >
-                  1824
-                </CardContent>
-                <CardActions>Do you want more visits? Contact us!</CardActions>
-              </CardStyled>
-            </MasonryItem>
-            <MasonryItem>
-              <CardStyled sx={{ minWidth: 275 }}>
-                <CardContent sx={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexGrow: "1" }}>
-                  <Grid sx={{ display: "flex", alignItems: "center" }}>
-                    <Eye />
-                    <CardTitle sx={{ ml: 1 }}>Visitors</CardTitle>
-                  </Grid>
-                </CardContent>
-                <CardContent
-                  sx={{
-                    fontFamily: "Noto Sans HK",
-                    fontStyle: "normal",
-                    fontWeight: 500,
-                    fontSize: 42,
-                    color: "#103b66",
-                  }}
-                >
-                  1824
-                </CardContent>
-                <CardActions>Do you want more visits? Contact us!</CardActions>
-              </CardStyled>
-            </MasonryItem>
-            <MasonryItem>
-              <CardStyled sx={{ minWidth: 275 }}>
-                <CardContent sx={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexGrow: "1" }}>
-                  <Grid sx={{ display: "flex", alignItems: "center" }}>
-                    <Eye />
-                    <CardTitle sx={{ ml: 1 }}>Visitors</CardTitle>
-                  </Grid>
-                </CardContent>
-                <CardContent
-                  sx={{
-                    fontFamily: "Noto Sans HK",
-                    fontStyle: "normal",
-                    fontWeight: 500,
-                    fontSize: 42,
-                    color: "#103b66",
-                  }}
-                >
-                  1824
-                </CardContent>
-                <CardActions>Do you want more visits? Contact us!</CardActions>
-              </CardStyled>
-            </MasonryItem>
-            <MasonryItem>
-              <CardStyled sx={{ minWidth: 275 }}>
-                <CardContent sx={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexGrow: "1" }}>
-                  <Grid sx={{ display: "flex", alignItems: "center" }}>
-                    <Eye />
-                    <CardTitle sx={{ ml: 1 }}>Visitors</CardTitle>
-                  </Grid>
-                </CardContent>
-                <CardContent
-                  sx={{
-                    fontFamily: "Noto Sans HK",
-                    fontStyle: "normal",
-                    fontWeight: 500,
-                    fontSize: 42,
-                    color: "#103b66",
-                  }}
-                >
-                  1824
-                </CardContent>
-                <CardActions>Do you want more visits? Contact us!</CardActions>
-              </CardStyled>
-            </MasonryItem>
+            <VisitorCard />
+            <OrderCard />
+            <ConfigureCard />
+            <DownloadCard />
+            <MarketplaceCard />
+            <TrustpilotCard />
+            <InviteCard />
+            <LastestNewsCard />
+            <SupportCard />
           </MasonryStyled>
         </GridMasonryStyled>
       </GridStyled>
