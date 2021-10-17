@@ -14,7 +14,7 @@ const Colored = styled.span`
 
 function TrustpilotCard() {
   return (
-    <MasonryItem>
+    <MasonryItem columnSpan={1}>
       <CardStyled sx={{ minWidth: 275, minHeight: 220, backgroundColor: "#ffffff" }}>
         <CardHeader text="Invite a Friend" icon="users" color="#103b66" />
         <CardContent>

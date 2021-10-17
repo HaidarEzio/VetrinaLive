@@ -18,6 +18,7 @@ import TrustpilotCard from "./cards/trustpilotCard.comp";
 import LastestNewsCard from "./cards/latestNewsCard.comp";
 import InviteCard from "./cards/inviteCard.comp";
 import SupportCard from "./cards/supportCard.comp";
+import MasonryItem from "@mui/lab/MasonryItem";
 
 const MasonryStyled = styled(Masonry)`
   height: 100%;
@@ -45,7 +46,6 @@ const GridMasonryStyled = styled(Grid)`
   position: relative;
   padding-top: 40px;
   padding-bottom: 48px;
-  max-width: 100%;
 `;
 const HeroText = styled(Typography)`
   font-family: Source Sans Pro;
@@ -66,8 +66,14 @@ export const CardStyled = styled(Card)`
 `;
 
 const MasonryGrid = () => {
+  const breakpoints = {
+    default: 3,
+    1100: 2,
+    700: 1,
+  };
+
   return (
-    <Box component="app" sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }}>
       <DrawerHeader />
       <GridStyled>
         <WelcomeBGStyled />
@@ -77,15 +83,17 @@ const MasonryGrid = () => {
             <LinkText color="#ffffff" linkText="app.vetrinalive.it/fenoh-store" link="https://vetrinalive.com/" />
           </Grid>
 
-          <MasonryStyled columns={3} spacing={3}>
+          <MasonryStyled columns={{ xs: 1, sm: 2, md: 3 }} spacing={{ xs: 1, sm: 2, md: 3 }}>
             <VisitorCard />
             <OrderCard />
             <ConfigureCard />
-            <DownloadCard />
             <MarketplaceCard />
+
+            <DownloadCard />
+
             <TrustpilotCard />
             <InviteCard />
-            <LastestNewsCard />
+            <LastestNewsCard columnSpan={2} />
             <SupportCard />
           </MasonryStyled>
         </GridMasonryStyled>

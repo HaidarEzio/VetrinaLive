@@ -9,8 +9,8 @@ import Apple from "../../assets/apple.png";
 import Google from "../../assets/google.png";
 function DownloadCard() {
   return (
-    <MasonryItem>
-      <CardStyled sx={{ minWidth: 275, backgroundColor: "#F3A35C" }}>
+    <MasonryItem columnSpan={1}>
+      <CardStyled sx={{ backgroundColor: "#F3A35C" }}>
         <CardContent>
           <Grid
             sx={{

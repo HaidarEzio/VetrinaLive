@@ -9,15 +9,15 @@ import { CardStyled } from "../masonry.comp";
 
 function OrderCard() {
   return (
-    <MasonryItem>
-      <CardStyled sx={{ minWidth: 275 }}>
+    <MasonryItem columnSpan={1}>
+      <CardStyled sx={{ width: 275 }}>
         <CardHeader text="Orders" icon="list" menu />
         <CardContent>
-          <Grid sx={{ display: "flex", justifyContent: "space-between", mb: 1.5 }}>
+          <Grid sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
             <Typography sx={{ color: "#6C7c8c" }}>Orders received:</Typography>
             <Typography sx={{ fontFamily: "Noto Sans HK", fontStyle: "normal", fontWeight: 500, fontSize: 17, color: "#103b66" }}>156</Typography>
           </Grid>
-          <Grid sx={{ display: "flex", justifyContent: "space-between", mb: 1.5 }}>
+          <Grid sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
             <Typography sx={{ color: "#6C7c8c" }}>Earnings:</Typography>
             <Typography sx={{ fontFamily: "Noto Sans HK", fontStyle: "normal", fontWeight: 500, fontSize: 17, color: "#103b66" }}>
               € 1893,24

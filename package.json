@@ -12,6 +12,7 @@
     "@testing-library/user-event": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-responsive-carousel": "^3.2.21",
     "react-scripts": "latest",
     "react-slick": "^0.28.1",
     "styled-components": "latest"

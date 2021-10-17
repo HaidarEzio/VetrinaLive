@@ -10,7 +10,7 @@ import { CardStyled } from "../masonry.comp";
 
 function SupportCard() {
   return (
-    <MasonryItem>
+    <MasonryItem columnSpan={1}>
       <CardStyled sx={{ minWidth: 275, minHeight: 220, backgroundColor: "#ffffff" }}>
         <CardHeader text="Customer Support" icon="headphones" color="#103b66" />
         <CardContent>

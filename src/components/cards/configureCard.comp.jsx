@@ -11,7 +11,7 @@ const randomnumber = () => Math.floor(Math.random() * (100 - 0)) + 0;
 
 function ConfigureCard() {
   return (
-    <MasonryItem>
+    <MasonryItem columnSpan={1}>
       <CardStyled sx={{ minWidth: 275, minHeight: 220 }}>
         <CardHeader text="Configure your Shop" icon="wrench" />
         <CardContent>

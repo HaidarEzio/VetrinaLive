@@ -8,9 +8,9 @@ import CardHeader from "../reusableParts/cardHeader.reusable.comp";
 import LinkText from "../reusableParts/linkText.reusable.comp";
 import BlogThumbnail from "../reusableParts/blogThumbnail.reusable.comp";
 
-function LatestNewsCard() {
+function LatestNewsCard({ columnSpan }) {
   return (
-    <MasonryItem columnSpan={2}>
+    <MasonryItem columnSpan={columnSpan}>
       <CardStyled sx={{ minWidth: 275, minHeight: 220 }}>
         <Grid
           sx={{

@@ -7,8 +7,8 @@ import { CardStyled } from "../masonry.comp";
 
 function VisitorCard() {
   return (
-    <MasonryItem>
-      <CardStyled sx={{ minWidth: 275, minHeight: 220 }}>
+    <MasonryItem columnSpan={1}>
+      <CardStyled sx={{ width: 275, minHeight: 220 }}>
         <CardHeader text="Visitors" icon="eye" menu />
         <CardContent
           sx={{

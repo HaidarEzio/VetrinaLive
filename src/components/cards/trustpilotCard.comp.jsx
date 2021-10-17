@@ -17,7 +17,7 @@ const Bolded = styled.span`
 
 function TrustpilotCard() {
   return (
-    <MasonryItem>
+    <MasonryItem columnSpan={1}>
       <CardStyled sx={{ minWidth: 275, minHeight: 220, backgroundColor: "#000032" }}>
         <CardHeader text="TrustPilot" icon="star" color="#ffffff" />
 
