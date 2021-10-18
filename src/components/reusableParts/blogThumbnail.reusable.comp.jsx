@@ -23,12 +23,14 @@ const Estimatedtime = styled(AuthorText)`
   text-decoration: underline;
 `;
 
-function BlogThumbnail({ post: { author, urlToImage, title } }) {
+function BlogThumbnail({ post: { author, urlToImage, title, url } }) {
   return (
     <Grid container xs={6} sx={{ display: "flex", justifyContent: "space-evenly" }}>
-      <Grid item>
-        <img src={urlToImage ? urlToImage : Thumbnail} alt="" width="100" height="105" />
-      </Grid>
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        <Grid item>
+          <img src={urlToImage ? urlToImage : Thumbnail} alt="" width="100" height="105" />
+        </Grid>
+      </a>
       <Grid item xs={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "space-evenly" }}>
         <AuthorText>{author}</AuthorText>
         <Headline>{title}</Headline>

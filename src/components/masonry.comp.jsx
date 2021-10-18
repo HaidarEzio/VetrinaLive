@@ -18,6 +18,7 @@ import TrustpilotCard from "./cards/trustpilotCard.comp";
 import LastestNewsCard from "./cards/latestNewsCard.comp";
 import InviteCard from "./cards/inviteCard.comp";
 import SupportCard from "./cards/supportCard.comp";
+import Spinner from "./reusableParts/spinner.reusable.comp";
 import MasonryItem from "@mui/lab/MasonryItem";
 import { useState, useEffect } from "react";
 import { getNewsPosts } from "../utils/getNewsPosts.func";
@@ -95,7 +96,7 @@ const MasonryGrid = () => {
             <TrustpilotCard />
             <InviteCard />
 
-            {newsPosts && <LastestNewsCard newsPosts={newsPosts} columnSpan={2} />}
+            {newsPosts ? <LastestNewsCard newsPosts={newsPosts} columnSpan={2} /> : Spinner}
 
             <SupportCard />
           </MasonryStyled>
