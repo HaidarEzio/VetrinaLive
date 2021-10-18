@@ -45,15 +45,13 @@ const Accordion = styled(Fragment)`
 
 export function DrawerItem({ icon, text, badge }) {
   return (
-    <>
-      <ListItemButtonStyled>
-        <ListItemIcon>{icon}</ListItemIcon>
-        <GridStyled>
-          <ListItemTextStyled primary={text} />
-          {badge ? <BadgeStyled badgeContent={badge}></BadgeStyled> : ""}
-        </GridStyled>
-      </ListItemButtonStyled>
-    </>
+    <ListItemButtonStyled>
+      <ListItemIcon>{icon}</ListItemIcon>
+      <GridStyled>
+        <ListItemTextStyled primary={text} />
+        {badge ? <BadgeStyled badgeContent={badge}></BadgeStyled> : ""}
+      </GridStyled>
+    </ListItemButtonStyled>
   );
 }
 
@@ -72,8 +70,8 @@ export function DrawerAccordion({ icon, text, innerList }) {
       </ListItemButtonStyled>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List sx={{ backgroundColor: "#E9F8FE" }} component="section" disablePadding>
-          {innerList.map((item) => (
-            <ListItemButton sx={{ py: 0.3, pl: 9.5 }}>
+          {innerList.map((item, index) => (
+            <ListItemButton key={index} sx={{ py: 0.3, pl: 9.5 }}>
               <ListItemTextStyled primary={item} />
             </ListItemButton>
           ))}

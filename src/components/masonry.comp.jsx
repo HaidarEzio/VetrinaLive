@@ -19,6 +19,8 @@ import LastestNewsCard from "./cards/latestNewsCard.comp";
 import InviteCard from "./cards/inviteCard.comp";
 import SupportCard from "./cards/supportCard.comp";
 import MasonryItem from "@mui/lab/MasonryItem";
+import { useState, useEffect } from "react";
+import { getNewsPosts } from "../utils/getNewsPosts.func";
 
 const MasonryStyled = styled(Masonry)`
   height: 100%;
@@ -66,12 +68,11 @@ export const CardStyled = styled(Card)`
 `;
 
 const MasonryGrid = () => {
-  const breakpoints = {
-    default: 3,
-    1100: 2,
-    700: 1,
-  };
+  const [newsPosts, setNewsPosts] = useState(null);
 
+  useEffect(() => {
+    getNewsPosts(setNewsPosts);
+  }, []);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <DrawerHeader />
@@ -93,7 +94,9 @@ const MasonryGrid = () => {
 
             <TrustpilotCard />
             <InviteCard />
-            <LastestNewsCard columnSpan={2} />
+
+            {newsPosts && <LastestNewsCard newsPosts={newsPosts} columnSpan={2} />}
+
             <SupportCard />
           </MasonryStyled>
         </GridMasonryStyled>

@@ -8,7 +8,7 @@ import CardHeader from "../reusableParts/cardHeader.reusable.comp";
 import LinkText from "../reusableParts/linkText.reusable.comp";
 import BlogThumbnail from "../reusableParts/blogThumbnail.reusable.comp";
 
-function LatestNewsCard({ columnSpan }) {
+function LatestNewsCard({ columnSpan, newsPosts }) {
   return (
     <MasonryItem columnSpan={columnSpan}>
       <CardStyled sx={{ minWidth: 275, minHeight: 220 }}>
@@ -24,11 +24,14 @@ function LatestNewsCard({ columnSpan }) {
         </Grid>
         <CardContent>
           <Grid container xs={12}>
+            {newsPosts.map((post, index) => (
+              <BlogThumbnail post={post} key={index} />
+            ))}
+
+            {/* <BlogThumbnail type="Ecommerce" headLine="How to earn money online: 7 ideas for you" estimatedTime="4" />
             <BlogThumbnail type="Ecommerce" headLine="How to earn money online: 7 ideas for you" estimatedTime="4" />
             <BlogThumbnail type="Ecommerce" headLine="How to earn money online: 7 ideas for you" estimatedTime="4" />
-            <BlogThumbnail type="Ecommerce" headLine="How to earn money online: 7 ideas for you" estimatedTime="4" />
-            <BlogThumbnail type="Ecommerce" headLine="How to earn money online: 7 ideas for you" estimatedTime="4" />
-            <BlogThumbnail type="Ecommerce" headLine="How to earn money online: 7 ideas for you" estimatedTime="4" />
+            <BlogThumbnail type="Ecommerce" headLine="How to earn money online: 7 ideas for you" estimatedTime="4" /> */}
           </Grid>
         </CardContent>
       </CardStyled>

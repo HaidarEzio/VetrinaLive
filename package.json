@@ -10,11 +10,10 @@
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
+    "axios": "^0.23.0",
     "react": "latest",
     "react-dom": "latest",
-    "react-responsive-carousel": "^3.2.21",
-    "react-scripts": "latest",
-    "react-slick": "^0.28.1",
+    "react-scripts": "^4.0.3",
     "styled-components": "latest"
   },
   "scripts": {
@@ -37,6 +36,6 @@
   },
   "devDependencies": {
     "customize-cra": "latest",
-    "react-app-rewired": "latest"
+    "react-app-rewired": "^2.1.8"
   }
 }

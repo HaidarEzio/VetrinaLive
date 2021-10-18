@@ -11,41 +11,41 @@ export const cardIcons = [
   {
     text: "Visitors",
     iconName: "eye",
-    icon: <Eye />,
+    icon: <Eye key="1" />,
   },
   {
     text: "Orders",
     iconName: "list",
-    icon: <ListIcon />,
+    icon: <ListIcon key="1" />,
   },
   {
     text: "Configure your Shop",
     iconName: "wrench",
-    icon: <Wrench />,
+    icon: <Wrench key="2" />,
   },
   {
     text: "Extensions Marketplace",
     iconName: "extensions",
-    icon: <NewApp />,
+    icon: <NewApp key="3" />,
   },
   {
     text: "Trust Pilot",
     iconName: "star",
-    icon: <Star />,
+    icon: <Star key="4" />,
   },
   {
     text: "Latest News",
     iconName: "file",
-    icon: <File />,
+    icon: <File key="5" />,
   },
   {
     text: "Invite a Friend",
     iconName: "users",
-    icon: <Users />,
+    icon: <Users key="6" />,
   },
   {
     text: "Customer Support",
     iconName: "headphones",
-    icon: <Headphones />,
+    icon: <Headphones key="7" />,
   },
 ];
