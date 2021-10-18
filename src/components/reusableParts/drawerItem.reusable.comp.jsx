@@ -6,6 +6,7 @@ import ListItemText from "@mui/material/ListItemText";
 import { Collapse, Badge, Grid } from "@mui/material";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import { useState, Fragment } from "react";
+import { Link } from "react-router-dom";
 
 const BadgeStyled = styled(Badge)`
   .MuiBadge-badge {
@@ -28,7 +29,16 @@ export const ListItemTextStyled = styled(ListItemText)`
   font-weight: 400;
   color: #103b66;
   margin-left: -20px;
+  &:hover {
+    color: #21b8f9;
+  }
   //*! color: ${({ select }) => (select ? "#21b8f9" : "inherit")}; */
+`;
+
+const ListItemIconStyled = styled(ListItemIcon)`
+  &:hover {
+    fill: #21b8f9;
+  }
 `;
 const GridStyled = styled(Grid)`
   display: flex;
@@ -43,15 +53,17 @@ const Accordion = styled(Fragment)`
   }
 `;
 
-export function DrawerItem({ icon, text, badge }) {
+export function DrawerItem({ icon, text, badge, link }) {
   return (
-    <ListItemButtonStyled>
-      <ListItemIcon>{icon}</ListItemIcon>
-      <GridStyled>
-        <ListItemTextStyled primary={text} />
-        {badge ? <BadgeStyled badgeContent={badge}></BadgeStyled> : ""}
-      </GridStyled>
-    </ListItemButtonStyled>
+    <Link to={link}>
+      <ListItemButtonStyled>
+        <ListItemIconStyled>{icon}</ListItemIconStyled>
+        <GridStyled>
+          <ListItemTextStyled primary={text} />
+          {badge ? <BadgeStyled badgeContent={badge}></BadgeStyled> : ""}
+        </GridStyled>
+      </ListItemButtonStyled>
+    </Link>
   );
 }
 

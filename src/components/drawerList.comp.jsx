@@ -32,19 +32,19 @@ const SideIndicator = styled.div`
 const DrawerItems = () => {
   return (
     <List>
-      {upperList.map(({ type, icon, text, innerList }, index) => (
+      {upperList.map(({ type, icon, text, innerList, link }, index) => (
         <>
-          {type === "item" && <DrawerItem key={index} icon={icon} text={text} />}
-          {type === "badge" && <DrawerItem key={index} icon={icon} text={text} badge={14} />}
-          {type === "accordion" && <DrawerAccordion key={index} icon={icon} text={text} innerList={innerList} />}
+          {type === "item" && <DrawerItem key={index} icon={icon} text={text} link={link} />}
+          {type === "badge" && <DrawerItem key={index} icon={icon} text={text} badge={14} link={link} />}
+          {type === "accordion" && <DrawerAccordion key={index} icon={icon} text={text} innerList={innerList} link={link} />}
         </>
       ))}
 
       <Divider sx={{ my: 2.5 }} />
 
-      {bottomList.map(({ icon, text }, index) => (
+      {bottomList.map(({ icon, text, link }, index) => (
         <>
-          <DrawerItem key={index} icon={icon} text={text} />
+          <DrawerItem key={index} icon={icon} text={text} link={link} />
         </>
       ))}
     </List>

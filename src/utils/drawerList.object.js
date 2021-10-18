@@ -17,27 +17,31 @@ import { ReactComponent as User } from "../assets/user.svg";
 import { ReactComponent as Brush } from "../assets/Brush.svg";
 
 export const upperList = [
-  { type: "item", icon: <Home />, text: "Dashboard" },
+  { type: "item", icon: <Home />, text: "Dashboard", link: "/" },
   {
     type: "accordion",
     icon: <ShoppingCart />,
     text: "Catalogue",
+    link: "/catalogue",
     innerList: ["MirrorMaker", "JawBreaker", "HeatSeeker", "GasLighter", "MoonRaker"],
   },
   {
     type: "badge",
     icon: <ListIcon />,
     text: "Orders",
+    link: "/orders",
   },
   {
     type: "item",
     icon: <User />,
     text: "Customers",
+    link: "/customers",
   },
   {
     type: "accordion",
     icon: <Target />,
     text: "Marketing",
+    link: "/marketing",
     innerList: [
       "Discount codes",
       "Exit intent",
@@ -50,26 +54,28 @@ export const upperList = [
       "Seasonal Offer",
     ],
   },
-  { type: "item", icon: <Truck />, text: "Delivery options" },
-  { type: "item", icon: <DollarSign />, text: "Payment Options" },
-  { type: "item", icon: <Brush />, text: "Store Design" },
-  { type: "item", icon: <CreditCard />, text: "Subscriptions" },
+  { type: "item", icon: <Truck />, text: "Delivery options", link: "/delivery-options" },
+  { type: "item", icon: <DollarSign />, text: "Payment Options", link: "/payment-options" },
+  { type: "item", icon: <Brush />, text: "Store Design", link: "/store-design" },
+  { type: "item", icon: <CreditCard />, text: "Subscriptions", link: "/subscriptions" },
   {
     type: "item",
     icon: <CogPlanet />,
     text: "Integrations",
+    link: "/integrations",
   },
   {
     type: "item",
     icon: <NewApp />,
     text: "Extensions",
+    link: "/extensions",
   },
-  { type: "item", icon: <Settings />, text: "Settings" },
-  { type: "item", icon: <LogOut />, text: "Log out" },
+  { type: "item", icon: <Settings />, text: "Settings", link: "/settings" },
+  { type: "item", icon: <LogOut />, text: "Log out", link: "/log-out" },
 ];
 
 export const bottomList = [
-  { type: "item", icon: <HelpCircle />, text: "Customer Support" },
-  { type: "item", icon: <Share />, text: "Share your shop" },
-  { type: "item", icon: <Eye />, text: "View your shop" },
+  { type: "item", icon: <HelpCircle />, text: "Customer Support", link: "/customer-support" },
+  { type: "item", icon: <Share />, text: "Share your shop", link: "/share-your-shop" },
+  { type: "item", icon: <Eye />, text: "View your shop", link: "/view-your-shop" },
 ];
